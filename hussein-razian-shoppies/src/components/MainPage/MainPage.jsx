@@ -31,6 +31,14 @@ let MainPage = () => {
     const selectNominees = (movie) => {
         let updatedNomineeList = [...nominees, movie];
         setNominees(updatedNomineeList);
+    };
+
+    const removeNominee = (movie) => {
+        let updatedNomineeList = nominees.filter( nominee => {
+            return nominee.imdbID !== movie.imdbID
+        })
+
+        setNominees(updatedNomineeList);
     }
 
     useEffect(() => {
@@ -43,7 +51,13 @@ let MainPage = () => {
         <div>
             <input name="movie" onChange={(e) => searchingMovie(e.target.value)}/>
             {movies && movies.map(movie => {
-            return <div onClick={() => selectNominees(movie)}> {movie.Title} </div>
+            return (
+            
+            <div >
+                <button onClick={() => selectNominees(movie)}>Add Nominee</button> 
+                <p>{movie.Title}</p>
+                <button onClick={() => removeNominee(movie)}>Remove Nominee</button> 
+            </div>)
         })}
         </div>
     )
