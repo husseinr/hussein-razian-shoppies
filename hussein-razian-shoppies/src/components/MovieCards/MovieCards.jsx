@@ -2,18 +2,14 @@ import React, {useState, useEffect} from 'react';
 
 function MovieCards({title, poster, year, nominateMovies, nominees, id}) {
 
-    const [isNominated, setIsNominated] = useState(false);
     let nomineeList = nominees.map(nominee => nominee.id);
-    console.log(nomineeList);
 
     const nominateMovie = (e) => {
         const nominated = {
             title: title,
             year: year,
             id: id,
-            nominated: true
         }
-        setIsNominated(true)
         nominateMovies(nominated)
     }
 
