@@ -50,10 +50,6 @@ let MainPage = () => {
         getMovies();
     }, [movieSearch]);
 
-    // let nominatedMovies = () => {
-    //      nominees && nominees.map(nominee => nominee.imdbID)
-    // }
-
     return (
         <div>
             <input name="movie" onChange={(e) => searchingMovie(e.target.value)}/>
@@ -70,7 +66,8 @@ let MainPage = () => {
                 year={movie.Year}
                 poster={movie.Poster}
                 id={movie.imdbID}
-                nominateMovies={selectNominees}/>
+                nominateMovies={selectNominees}
+                nominees={nominees}/>
                 {/* <button  onClick={() => selectNominees(movie)}>Add Nominee</button> */}
                 {/* {nominees && nominees.find(nominee => {
                     if(movie.imdbID !== nominee.imdbID) {
@@ -91,13 +88,10 @@ let MainPage = () => {
         <h1>Nominees</h1>
             {nominees && nominees.map(nominee => {
             return (
-            
-            <div >
-    
+            <div key={nominee.id}>
                 <p>{nominee.title}</p>
                 <p>{nominee.year}</p>
                 <button onClick={() => removeNominee(nominee)}>Remove </button> 
-           
             </div>)
         })}
 
