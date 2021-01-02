@@ -1,0 +1,129 @@
+@import '../../styles/common-styles';
+
+.main-page {
+    // background-image: url('../../assets/images/frame.jpg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center;
+    background-size: 100vw 100vh;
+    min-height: 100vh;
+    background-color: black;
+
+    &__content {
+
+        &-search {
+            width: 60%;
+            height: 39px;
+            padding: 8px 38px;
+            position: absolute;
+            margin: 0 auto;
+            top: 131px;
+            right: 0;
+            left: 0;
+            background-color: #E9E9E9;
+            border: none;
+            border-radius: 8px;
+            background-image: url("../../assets/images/search-icon.svg");
+            background-repeat: no-repeat;
+            background-position: 16px;
+
+        }
+
+        &-results {
+            margin: 135px auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 70%;
+        }
+
+        &-title {
+            color: #d6c771;
+            font-size: 1rem;
+        }
+
+        &-nominees {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 2em auto;
+            width: 70%;
+        }
+
+    }
+}
+
+// .curtain {
+//     margin: 0 auto;
+//     width: 100%;
+//     height: 100vh;
+//     overflow: hidden;
+    
+//     &__wrapper {
+//       width: 100%;
+//       height: 100%;
+      
+//       input[type=checkbox] {
+//         position: absolute;
+//         cursor: pointer;
+//         width: 100%;
+//         height: 100%;
+//         z-index: 100;
+//         opacity: 0;
+//         top: 0;
+//         left: 0;
+        
+//         // When the checkbox is checked...
+//         &:checked {
+          
+//           // Slide the first panel
+//           &~div.curtain__panel--left {
+//             transform: translateX(0);
+//           }
+          
+//           // Slide the second panel
+//           &~div.curtain__panel--right {
+//             transform: translateX(0);
+//           }
+//         }
+//       }
+//     }
+    
+//     &__panel {
+//       display: flex;
+//       align-items: center;
+//       background: orange;
+//       color: #fff;
+//       float: left;
+//       position: relative;
+//       width: 50%;
+//       height: 100vh;
+//       transition: all 1s ease-out;
+//       z-index: 2;
+//       &--left {
+//         justify-content: flex-end;
+//         transform: translateX(-100%);
+//       }
+//       &--right {
+//         justify-content: flex-start;
+//         transform: translateX(100%);
+//       }
+//     }
+    
+//     &__content {
+//       align-items: center;
+//       background: #333;
+//       color: #fff;
+//       display: flex;
+//       flex-direction: column;
+//       height: 100vh;
+//       justify-content: center;
+//       padding: 1rem 0;
+//       position: absolute;
+//       text-align: center;
+//       z-index: 1;
+//       width: 100%;
+    
+//     }
+  
+//   }

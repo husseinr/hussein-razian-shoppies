@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import PageHeader from '../PageHeader/PageHeader';
 import MovieCards from '../MovieCards/MovieCards';
 import axios from 'axios';
+import './mainPage.scss';
 
 
 
@@ -34,10 +36,6 @@ let MainPage = () => {
         if(nominees.length < 5)setNominees(updatedNomineeList);
     };
 
-    // update below
-
-
-
     const removeNominee = (movie) => {
         let updatedNomineeList = nominees.filter( nominee => {
             return nominee.id !== movie.id
@@ -46,54 +44,72 @@ let MainPage = () => {
         console.log(updatedNomineeList)
     };
 
+    let nomineeAlert;
+    if(nominees.length === 5) { 
+        nomineeAlert = <div>There are 5 nominees</div>
+    }
+
     useEffect(() => {
         getMovies();
     }, [movieSearch]);
 
     return (
-        <div>
-            <input name="movie" onChange={(e) => searchingMovie(e.target.value)}/>
+        <div className="curtain">
+            <div className="curtain__wrapper">
+                {/* <input type="checkbox"/> */}
+                <div className="curtain__panel curtain__panel--left"/>
+                <div className="curtain__content">
+                <main className="main-page">
+                    <PageHeader/>
+                    <div className="main-page__content">
+                        <input className="main-page__content-search" placeholder="Search a Movie" name="movie" autocomplete="off" onChange={(e) => searchingMovie(e.target.value)}/>
 
-            
-            {movies && movies.map(movie => {
+                        <section className="main-page__content-results">
 
-            return (
-            
-            <div >
-                <MovieCards
-                key={movie.imdbID}
-                title={movie.Title}
-                year={movie.Year}
-                poster={movie.Poster}
-                id={movie.imdbID}
-                nominateMovies={selectNominees}
-                nominees={nominees}/>
-                {/* <button  onClick={() => selectNominees(movie)}>Add Nominee</button> */}
-                {/* {nominees && nominees.find(nominee => {
-                    if(movie.imdbID !== nominee.imdbID) {
-                        <button onClick={() => selectNominees(movie)}>Add Nominee</button>
-                        console.log('hi')
-                    }
-                    else {
-                        <button disabled onClick={() => selectNominees(movie)}>Add Nominee</button>
-                        console.log('no')
-                    }
-                })
-                } */}
-                {/* <p>{movie.Title}</p>
-                <p>{movie.Year}</p>
-                <img src={movie.Poster} alt={`${movie.Title} poster`}/> */}
-            </div>)
-            })}
-        <h1>Nominees</h1>
-            {nominees && nominees.map(nominee => {
-            return (
-            <div key={nominee.id}>
-                <p>{nominee.title}</p>
-                <p>{nominee.year}</p>
-                <button onClick={() => removeNominee(nominee)}>Remove </button> 
-            </div>)
-        })}
+                            {movies && movies.map(movie => {
+
+                            return (
+                                <MovieCards
+                                key={movie.imdbID}
+                                title={movie.Title}
+                                year={movie.Year}
+                                poster={movie.Poster}
+                                id={movie.imdbID}
+                                nominateMovies={selectNominees}
+                                nominees={nominees}/>
+                            )
+                            })}
+                        </section>
+                        <h1 className="main-page__content-title">Nominees</h1>
+                        <section className="main-page__content-nominees">
+                                {nominees && nominees.map(nominee => {
+                                return (
+                                    
+                                <div className="card" key={nominee.id}>
+                                    <img className="card__image" src={nominee.poster}/>
+                                    <div className="card__items">
+                                        <h2 className="card__items-title">{nominee.title}</h2>
+                                        <p className="card__items-year">{nominee.year}</p>
+                                        <button className="card__items-button" onClick={() => removeNominee(nominee)}>Remove </button> 
+                                    </div>
+  
+                                </div>)
+                                    }
+                                )
+                            }
+
+                        </section>
+
+
+
+                    </div>
+                </main>
+
+                </div>
+                <div className="curtain__panel curtain__panel--right"></div>
+
+
+            </div>
 
         </div>
     )

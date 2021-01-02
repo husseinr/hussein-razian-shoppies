@@ -1,0 +1,31 @@
+@mixin commonFlex($justify, $direction, $wrap) {
+    display: flex;
+    justify-content: $justify;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+ }
+
+
+@mixin tablet {
+    @media (min-width: $tablet-width)
+    {@content;}
+    
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-width)
+    {@content;}
+    
+}
+
+@mixin imac {
+    @media (min-width: 1440px)
+    {@content;}
+    
+}
+
+@mixin atlas {
+    font-family: 'atlas';
+    font-weight: 400;
+    font-style: normal;
+ }

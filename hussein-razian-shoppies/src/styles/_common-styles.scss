@@ -1,0 +1,11 @@
+@import './fonts';
+@import './mixins';
+@import './variables';
+*{
+    @include atlas;
+    margin: 0;
+
+}
+*:focus {
+    outline: none;
+}
