@@ -6,10 +6,10 @@
     // background-size: cover;
     // background-position: center;
     background-size: 100vw 100vh;
-    min-height: 100vh;
     background-color: black;
 
     &__content {
+        min-height: 100vh;
 
         &-search {
             width: 60%;
@@ -40,15 +40,38 @@
         &-title {
             color: #d6c771;
             font-size: 1rem;
+            margin-bottom: 0.5em;
         }
 
         &-nominees {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            margin: 2em auto;
+            margin: 0 auto;
             width: 70%;
         }
+
+    }
+}
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(3, 3, 3, 0.3);
+
+    &__content {
+        width: 200px;
+        height: 150px;
+        background-color: white;
+
+        
+    }
+
+    &__message {
+
 
     }
 }
@@ -127,3 +150,4 @@
 //     }
   
 //   }
+
