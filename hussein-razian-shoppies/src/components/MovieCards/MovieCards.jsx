@@ -17,7 +17,7 @@ function MovieCards({title, poster, year, nominateMovies, nominees, id}) {
 
     let nominateButton;
     if(nomineeList.includes(id)) {
-        nominateButton = <button className="card__items-button" disabled onClick={(e) => nominateMovie(e)}>Nominate</button>
+        nominateButton = <button className="card__items-button--disabled" disabled onClick={(e) => nominateMovie(e)}>Nominate</button>
     }
     else {
         nominateButton = <button className="card__items-button" onClick={(e) => nominateMovie(e)}>Nominate</button>
@@ -25,7 +25,9 @@ function MovieCards({title, poster, year, nominateMovies, nominees, id}) {
 
     return (
         <div className="card">
-            <img className="card__image" src={poster} alt={`${title} movie-poster`}/>
+            <div className="card__image">
+                <img className="card__image-file" src={poster} alt={`${title} movie-poster`}/>
+            </div>
             <div className="card__items">
                 <h2 className="card__items-title">{title}</h2>
                 <p className="card__items-year">{year}</p>

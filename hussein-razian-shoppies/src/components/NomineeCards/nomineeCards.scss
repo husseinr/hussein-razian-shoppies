@@ -1,0 +1,68 @@
+.nom-card {
+    height: 120px;
+    width: 250px;
+    display: flex;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0px;
+        background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+        z-index: 1;
+    }
+
+    &__value {
+        height: 100%;
+        width: 100px;
+
+
+        &-index {
+            font-family: "Helvetica Neue";
+            font-size: 5rem;
+            font-weight: 700;
+            color: #68686b;
+        }
+    }
+
+    &__content{
+        position: relative;
+
+        &-image {
+            height: 100%;
+            width: 100px;
+            position: absolute;
+            inset: 0px;
+        }
+        &-items {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            &-title {
+                font-size: 1rem;
+                font-family: "Helvetica Neue";
+                color: #ffffff;
+                font-weight: bold;
+                width: 100px;
+
+            }
+
+            &-button {
+                width: 80px;
+                height: 30px;
+                font-size: .75rem;
+                color: #ffffff;
+                background-color: rgb(218, 62, 62);
+                font-family: "Helvetica Neue";
+                border-radius: 5px;
+                border: none;
+            }
+        }
+    }
+}

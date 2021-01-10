@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import PageHeader from '../PageHeader/PageHeader';
 import MovieCards from '../MovieCards/MovieCards';
+import NomineeCards from '../NomineeCards/NomineeCards';
 // import PopUpModal from '../PopUpModal/PopUpModal';
 import axios from 'axios';
 import './mainPage.scss';
@@ -64,7 +65,6 @@ let MainPage = () => {
     return (
       
         <div className="curtain">
-              {nomineeAlert}
             <div className="curtain__wrapper">
                 {/* <input type="checkbox"/> */}
                 <div className="curtain__panel curtain__panel--left"/>
@@ -76,7 +76,7 @@ let MainPage = () => {
 
                         <section className="main-page__content-results">
 
-                            {movies && movies.map(movie => {
+                            {movies && movies.map((movie) => {
 
                             return (
                                 <MovieCards
@@ -86,36 +86,35 @@ let MainPage = () => {
                                 poster={movie.Poster}
                                 id={movie.imdbID}
                                 nominateMovies={selectNominees}
-                                nominees={nominees}/>
+                                nominees={nominees}
+                            
+                                />
                             )
                             })}
                         </section>
+
                         {nominees.length && <h1 className="main-page__content-title">Nominees</h1>}
                         <section className="main-page__content-nominees">
-                                {nominees && nominees.map(nominee => {
+
+                            {nominees && nominees.map((nominee, index) => {
                                 return (
-                                    
-                                <div className="card" key={nominee.id}>
-                                    <img className="card__image" src={nominee.poster}/>
-                                    <div className="card__items">
-                                        <h2 className="card__items-title">{nominee.title}</h2>
-                                        <p className="card__items-year">{nominee.year}</p>
-                                        <button className="card__items-button" onClick={() => removeNominee(nominee)}>Remove </button> 
-                                    </div>
-                                </div>)
-                                    }
+                                    <NomineeCards
+                                    key={nominee.id}
+                                    src={nominee.poster}
+                                    title={nominee.title}
+                                    year={nominee.year}
+                                    remove={removeNominee}
+                                    nominee={nominee}
+                                    index={index + 1}
+                                    />
                                 )
-                            }
+                            })}
                         </section>
                     </div>
                 </main>
-
                 </div>
                 <div className="curtain__panel curtain__panel--right"></div>
-
-
             </div>
-
         </div>
     )
 }

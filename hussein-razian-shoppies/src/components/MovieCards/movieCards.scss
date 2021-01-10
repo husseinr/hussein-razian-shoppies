@@ -1,54 +1,70 @@
 .card {
-    position: relative;
-    height: 180px;
-    width: 90px;
-    margin: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin-bottom: 1em;
 
-    &:before {
-        content: "";
-        position: absolute;
-        inset: 0px;
-        background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
-        z-index: 1;
-    }
+    height: 120px;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    background-color: #232324;
+    border-radius: 8px;
+
+    // &:before {
+    //     content: "";
+    //     position: absolute;
+    //     inset: 0px;
+    //     background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+    //     z-index: 1;
+    // }
 
     &__image {
         height: 100%;
-        width: 100%;
-        object-fit: cover;
-        position: absolute;
+        width: 100px;
+        
+        &-file {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 
     &__items {
-        position: absolute;
-        z-index: 2;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        margin-right: 10px;
 
         &-title {
             font-size: 1rem;
             font-family: "Helvetica Neue";
             color: #fff;
             font-weight: bold;
+            width: 100px;
 
         }
     
         &-year {
             font-size: 1rem;
             font-family: "Helvetica Neue";
-            color: #fff;
+            color: #ffffff;
             font-weight: bold;
+            width: 100px;
         }
     
     
         &-button {
-            width: 100%;
-            font-size: 1rem;
-            background-color: #fff;
+            width: 80px;
+            height: 30px;
+            font-size: .75rem;
+            color: #ffffff;
+            background-color: rgb(18, 160, 18);
             font-family: "Helvetica Neue";
-            
+            border-radius: 5px;
+            border: none;
+            &--disabled {
+                font-family: "Helvetica Neue";
+            }
         }
 
     }
