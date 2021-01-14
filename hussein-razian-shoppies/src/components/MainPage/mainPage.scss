@@ -5,13 +5,25 @@
     // background-repeat: no-repeat;
     // background-size: cover;
     // background-position: center;
-    background-size: 100vw 100vh;
+    // background-size: 100vw 100vh;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &__content {
         min-height: 100vh;
 
+        &-sections {
+
+            @include tablet {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+
         &-search {
+            font-family: "Helvetica Neue";
             width: 60%;
             height: 39px;
             padding: 8px 38px;
@@ -26,31 +38,50 @@
             background-image: url("../../assets/images/search-icon.svg");
             background-repeat: no-repeat;
             background-position: 16px;
-
         }
 
         &-results {
-            margin: 135px auto;
-            // display: flex;
-            // justify-content: space-around;
-            // flex-wrap: wrap;
-            width: 70%;
+            margin: 135px 3%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 94%;
+            @include tablet {
+                justify-content: space-around;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 50%;
+            }
         }
 
         &-title {
             color: #d6c771;
-            font-size: 1rem;
+            font-size: 2rem;
             margin-bottom: 0.5em;
         }
 
         &-nominees {
+            height: 100%;
+            background-color: black;
+            // background-image: url('../../assets/images/stage-background.jpg');
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            // background-position: center;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             margin: 0 auto;
-            width: 70%;
-        }
+            // min-height: 50vh;
+            min-width: 100vw;
+            // width: 70%;
 
+            @include tablet {
+                min-height: 0;
+                min-width: 0;
+                margin: 135px 0;
+                flex-direction: column;
+            }
+        }
     }
 }
 

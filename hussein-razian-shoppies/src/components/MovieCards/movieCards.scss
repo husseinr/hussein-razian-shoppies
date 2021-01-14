@@ -1,6 +1,6 @@
 .card {
 
-    height: 120px;
+    height: 170px;
     width: 250px;
     display: flex;
     justify-content: space-between;
@@ -18,11 +18,12 @@
 
     &__image {
         height: 100%;
-        width: 100px;
+        width: 140px;
         
         &-file {
             height: 100%;
             width: 100%;
+            border-radius: 8px 0 0 8px;
             object-fit: cover;
         }
     }
@@ -58,14 +59,14 @@
             height: 30px;
             font-size: .75rem;
             color: #ffffff;
-            background-color: rgb(18, 160, 18);
+            background-color: #018060;
             font-family: "Helvetica Neue";
             border-radius: 5px;
             border: none;
+
             &--disabled {
                 font-family: "Helvetica Neue";
             }
         }
-
     }
 }

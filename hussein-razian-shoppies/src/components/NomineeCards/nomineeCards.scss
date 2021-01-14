@@ -1,8 +1,9 @@
 .nom-card {
-    height: 120px;
-    width: 250px;
+    height: 140px;
+    width: 200px;
     display: flex;
     position: relative;
+    margin-bottom: 0.5em;
 
     &:before {
         content: "";
