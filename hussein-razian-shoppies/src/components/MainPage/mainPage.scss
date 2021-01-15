@@ -11,8 +11,87 @@
     flex-direction: column;
     align-items: center;
 
+
     &__content {
         min-height: 100vh;
+        width: 100vw;
+
+        &-heading {
+            width: 50%;
+            margin: 0.5em auto;
+            font-family: "Helvetica Neue";
+            color: white;
+            font-size: 1rem;
+        }
+
+        &-search {
+            font-family: "Helvetica Neue";
+            width: 70%;
+            height: 39px;
+            padding: 8px 38px;
+            background-color: #E9E9E9;
+            border: none;
+            border-radius: 8px;
+            background-image: url("../../assets/images/search-icon.svg");
+            background-repeat: no-repeat;
+            background-position: 16px;
+        }
+
+        &-items {
+            width: 100%;
+
+            @include tablet {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            &-results {
+                min-width: 50%;
+
+                
+                &-header {
+                    font-family: "Helvetica Neue";
+                    color: white;
+                    background-color: #232324;
+                    border-radius: 8px;
+                    height: 48px;
+                    width: 50%;
+                    margin: 1em auto;
+                    font-size: 1.25rem;
+                    line-height: 50px;
+
+                }
+                &-cards {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                }
+            }
+
+            &-nominees {
+                min-width: 50%;
+                
+                &-header {
+                    font-size: 1.25rem;
+                    font-family: "Helvetica Neue";
+                    color: white;
+                    background-color: #232324;
+                    border-radius: 8px;
+                    height: 48px;
+                    width: 50%;
+                    margin: 1em auto;
+                    line-height: 50px;
+
+                }
+
+                &-cards{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
 
         &-sections {
 
@@ -20,24 +99,6 @@
                 display: flex;
                 justify-content: space-around;
             }
-        }
-
-        &-search {
-            font-family: "Helvetica Neue";
-            width: 60%;
-            height: 39px;
-            padding: 8px 38px;
-            position: absolute;
-            margin: 0 auto;
-            top: 131px;
-            right: 0;
-            left: 0;
-            background-color: #E9E9E9;
-            border: none;
-            border-radius: 8px;
-            background-image: url("../../assets/images/search-icon.svg");
-            background-repeat: no-repeat;
-            background-position: 16px;
         }
 
         &-results {
@@ -85,100 +146,25 @@
     }
 }
 
-.modal {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(3, 3, 3, 0.3);
+.confirm-nom {
+    background-color: rgb(79, 112, 79);
+    width: 50%;
+    margin: 1em auto;
+    padding: 0.5em 0;
+    border-radius: 8px;
 
-    &__content {
-        width: 200px;
-        height: 150px;
-        background-color: white;
+    &__header {
+        font-family: "Helvetica Neue";
+        color: white;
 
-        
     }
 
-    &__message {
-
-
+    &__button {
+        font-family: "Helvetica Neue";
+        color: black;
+        border: none;
+        border-radius: 4px;
+        height: 24px;
+        background-color: rgb(141, 153, 141);
     }
 }
-
-// .curtain {
-//     margin: 0 auto;
-//     width: 100%;
-//     height: 100vh;
-//     overflow: hidden;
-    
-//     &__wrapper {
-//       width: 100%;
-//       height: 100%;
-      
-//       input[type=checkbox] {
-//         position: absolute;
-//         cursor: pointer;
-//         width: 100%;
-//         height: 100%;
-//         z-index: 100;
-//         opacity: 0;
-//         top: 0;
-//         left: 0;
-        
-//         // When the checkbox is checked...
-//         &:checked {
-          
-//           // Slide the first panel
-//           &~div.curtain__panel--left {
-//             transform: translateX(0);
-//           }
-          
-//           // Slide the second panel
-//           &~div.curtain__panel--right {
-//             transform: translateX(0);
-//           }
-//         }
-//       }
-//     }
-    
-//     &__panel {
-//       display: flex;
-//       align-items: center;
-//       background: orange;
-//       color: #fff;
-//       float: left;
-//       position: relative;
-//       width: 50%;
-//       height: 100vh;
-//       transition: all 1s ease-out;
-//       z-index: 2;
-//       &--left {
-//         justify-content: flex-end;
-//         transform: translateX(-100%);
-//       }
-//       &--right {
-//         justify-content: flex-start;
-//         transform: translateX(100%);
-//       }
-//     }
-    
-//     &__content {
-//       align-items: center;
-//       background: #333;
-//       color: #fff;
-//       display: flex;
-//       flex-direction: column;
-//       height: 100vh;
-//       justify-content: center;
-//       padding: 1rem 0;
-//       position: absolute;
-//       text-align: center;
-//       z-index: 1;
-//       width: 100%;
-    
-//     }
-  
-//   }
-

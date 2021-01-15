@@ -4,7 +4,6 @@ import PageHeader from '../PageHeader/PageHeader';
 import MovieCards from '../MovieCards/MovieCards';
 import NomineeCards from '../NomineeCards/NomineeCards';
 import FinalNomineePage from '../FinalNomineePage/FinalNomineePage';
-// import PopUpModal from '../PopUpModal/PopUpModal';
 import axios from 'axios';
 import './mainPage.scss';
 
@@ -15,6 +14,7 @@ let MainPage = () => {
     const [movies, setMovies] = useState([]);
     const [movieSearch, setMovieSearch] = useState('');
     const [nominees, setNominees] = useState([]);
+    const [nomConfirmation, setNomConfirmation] = useState(true);
   
     let API_URL = `http://www.omdbapi.com/?s=${movieSearch && movieSearch}&apikey=26250842`;
 
@@ -48,31 +48,15 @@ let MainPage = () => {
         console.log(updatedNomineeList)
     };
     
-    const [nomConfirmation, setNomConfirmation] = useState(true);
+
     let finalRedierct = () => {
         setNomConfirmation(!nomConfirmation)
     }
 
-    // let nomineeAlert;
-    // if(nominees.length === 5) { 
-    //     nomineeAlert = 
-    //     <div>
-    //         <h2>You have 5 Nominations!</h2>
-    //         <button onClick={setNomConfirmation(!nomConfirmation)}>Click here to Confirm Nominations</button>
-    //     </div>
-    // }
-
     useEffect(() => {
         getMovies();
     }, [movieSearch]);
-    
-let nomineesLength;
-if(nominees.length < 5) {
-    nomineesLength = true
-}
-else {
-    nomineesLength = false
-};
+
 
 let FinalPage = () => {
     return (
@@ -82,74 +66,67 @@ let FinalPage = () => {
     )
 };
 
-let nomLength;
-
+let nomConfirm;
 if (nominees.length === 5) {
-   nomLength =
-   <div>
-        <h2>You Now have 5 Nominations</h2>
-        <button onClick={finalRedierct}>Click here to Submit</button>
+   nomConfirm =
+   <div className="confirm-nom">
+        <h2 className="confirm-nom__header">You Now have 5 Nominations</h2>
+        <button className="confirm-nom__button" onClick={finalRedierct}>Click here to Submit</button>
     </div>
 }
 
-    return (
-      nomConfirmation  ? 
-        <div className="curtain">
-        <div className="curtain__wrapper">
-            {/* <input type="checkbox"/> */}
-            <div className="curtain__panel curtain__panel--left"/>
-            <div className="curtain__content">
-            <main className="main-page">
-            {nomLength}
-                <PageHeader/>
-                <div className="main-page__content">
-                    <input className="main-page__content-search" placeholder="Search a Movie" name="movie" autocomplete="off" onChange={(e) => searchingMovie(e.target.value)}/>
-                    <div className="main-page__content-sections">
-                        <section className="main-page__content-results">
-
+return (
+    nomConfirmation  ? 
+    <>
+        <PageHeader/>
+        <main className="main-page">
+            <div className="main-page__content">
+                <h2 className="main-page__content-heading">Search for a Movie Below and Select your Nominees!</h2>
+                <input className="main-page__content-search" placeholder="Search a Movie" name="movie" autocomplete="off" onChange={(e) => searchingMovie(e.target.value)}/>
+                {nomConfirm}
+                <section className="main-page__content-items">
+                    <div className="main-page__content-items-results">
+                        <h2 className="main-page__content-items-results-header">Search Results</h2>
+                        <div className="main-page__content-items-results-cards">
                             {movies && movies.map((movie) => {
-
-                            return (
-                                <MovieCards
-                                key={movie.imdbID}
-                                title={movie.Title}
-                                year={movie.Year}
-                                poster={movie.Poster}
-                                id={movie.imdbID}
-                                nominateMovies={selectNominees}
-                                nominees={nominees}
-                                />
-                            )
-                            })}
-                        </section>
-
-                        <section className="main-page__content-nominees">
-                        {nominees.length && <h1 className="main-page__content-title">Nominees</h1>}
-
+                            return <MovieCards
+                                    key={movie.imdbID}
+                                    title={movie.Title}
+                                    year={movie.Year}
+                                    poster={movie.Poster}
+                                    id={movie.imdbID}
+                                    nominateMovies={selectNominees}
+                                    nominees={nominees}/>
+                                    }
+                                )
+                            }
+                        </div>
+                    </div>
+                    <div className="main-page__content-items-nominees">
+                        <h2 className="main-page__content-items-nominees-header"> Nominees</h2>
+                        <div className="main-page__content-items-nominees-cards">
                             {nominees && nominees.map((nominee, index) => {
-                                return (
-                                    <NomineeCards
+                            return  <NomineeCards
                                     key={nominee.id}
                                     src={nominee.poster}
                                     title={nominee.title}
                                     year={nominee.year}
                                     remove={removeNominee}
                                     nominee={nominee}
-                                    index={index + 1}
-                                    />
+                                    index={index + 1}/>
+                            
+                                    }
                                 )
-                            })}
-                        </section>
+                            }
+                        </div>
                     </div>
-                </div>
-            </main>
+                </section>
             </div>
-            <div className="curtain__panel curtain__panel--right"></div>
-        </div>
-    </div>
-    : 
-    <FinalPage/>
-    )
+        </main>
+        </>
+: 
+<FinalPage/>
+)
 }
 
 export default MainPage

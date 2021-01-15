@@ -1,27 +1,25 @@
 import React from 'react';
 import NomineeCards from '../NomineeCards/NomineeCards';
+import "./finalNomineePage.scss";
 
 function FinalNomineePage({nominees}) {
     return (
-        <div>
-            <p>Heyy</p>
-                {nominees && nominees.map((nominee, index) => {
-                return (
-                    <div className="nom-card" key={nominee.key}>
-                    <div className="nom-card__value">
-                        <h2 className="nom-card__value-index">Test</h2>
-                    </div>
-                    <div className="nom-card__content">
-                        <img className="nom-card__content-image" src={nominee.src}/>
-                        <div className="nom-card__content-items">
-                            <h3 className="nom-card__content-items-title"> {nominee.title} </h3>
-                        </div>
-                    </div>
-                </div>
-                )
-            })}
-            
-        </div>
+        <main className="final-results">
+            <div className="final-results__display">
+            {nominees && nominees.map((nominee, index) => {
+                        return (
+                            <div className="final-results__display-card" key={nominee.key}>
+                                <div className="final-results__display-card-items">
+                                    <img className="final-results__display-card-items-image" src={nominee.poster}/>
+                                    <h3 className="final-results__display-card-items-title"> {nominee.title} </h3>
+                                </div>
+                            </div>
+                            )
+                        }
+                    )
+                }
+            </div>
+        </main>
     )
 }
 

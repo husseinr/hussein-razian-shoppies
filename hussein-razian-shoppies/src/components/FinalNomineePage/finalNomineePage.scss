@@ -1,0 +1,65 @@
+.final-results {
+    background-color: black;
+    background-image: url('../../assets/images/tobias.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+    &__display {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        background-color: rgb(206, 206, 206);
+        height: 300px;
+        border-radius: 16px;
+        position: absolute;
+        top: 100px;
+        right: 70px;
+        
+
+
+        &-card {
+            height: 150px;
+            width: 120px;
+            display: flex;
+            position: relative;
+    
+            &:before {
+                content: "";
+                position: absolute;
+                inset: 0px;
+                background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+                z-index: 1;
+            }
+    
+            &-items {
+                position: relative;
+    
+                &-image {
+                    height: 100%;
+                    width: 100%;
+                }
+                &-title {
+       
+                    position: absolute;
+                    z-index: 3;
+                    font-size: 1rem;
+                    font-family: "Helvetica Neue";
+                    color: #ffffff;
+                    font-weight: bold;
+                    width: 100px;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+
+}
