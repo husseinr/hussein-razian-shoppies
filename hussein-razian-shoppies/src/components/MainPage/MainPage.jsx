@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {Link, Switch} from 'react-router-dom';
 import PageHeader from '../PageHeader/PageHeader';
 import MovieCards from '../MovieCards/MovieCards';
 import NomineeCards from '../NomineeCards/NomineeCards';
@@ -16,7 +15,7 @@ let MainPage = () => {
     const [nominees, setNominees] = useState([]);
     const [nomConfirmation, setNomConfirmation] = useState(true);
   
-    let API_URL = `http://www.omdbapi.com/?s=${movieSearch && movieSearch}&apikey=26250842`;
+    let API_URL = `http://www.omdbapi.com/?s=${movieSearch && movieSearch}&type="movie"&apikey=26250842`;
 
     const getMovies = async () => {
         axios
@@ -44,8 +43,7 @@ let MainPage = () => {
         let updatedNomineeList = nominees.filter( nominee => {
             return nominee.id !== movie.id
         })
-        setNominees(updatedNomineeList);
-        console.log(updatedNomineeList)
+        setNominees(updatedNomineeList)
     };
     
 
@@ -78,12 +76,12 @@ if (nominees.length === 5) {
 return (
     nomConfirmation  ? 
     <>
-        <PageHeader/>
+        <PageHeader nomConfirm={nomConfirm}/>
         <main className="main-page">
             <div className="main-page__content">
                 <h2 className="main-page__content-heading">Search for a Movie Below and Select your Nominees!</h2>
+                {/* {nomConfirm} */}
                 <input className="main-page__content-search" placeholder="Search a Movie" name="movie" autocomplete="off" onChange={(e) => searchingMovie(e.target.value)}/>
-                {nomConfirm}
                 <section className="main-page__content-items">
                     <div className="main-page__content-items-results">
                         <h2 className="main-page__content-items-results-header">Search Results</h2>

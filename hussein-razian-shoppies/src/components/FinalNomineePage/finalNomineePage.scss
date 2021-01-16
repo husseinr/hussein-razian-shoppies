@@ -1,35 +1,54 @@
+@import '../../styles/common-styles';
+
 .final-results {
     background-color: black;
-    background-image: url('../../assets/images/tobias.png');
+    background-image: url('../../assets/images/stage-background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center;
     min-height: 100vh;
     width: 100vw;
     position: relative;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__image {
+        display: none;
+        @include tablet {
+            display: block;
+            position: absolute;
+            height: 56vh;
+            bottom: 80px;
+            left: 100px;
+        }
+
+    }
 
     &__display {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 90%;
-        background-color: rgb(206, 206, 206);
-        height: 300px;
+        flex-direction: column;
         border-radius: 16px;
         position: absolute;
-        top: 100px;
-        right: 70px;
+
+        @include tablet {
+            flex-direction: row;
+        }
         
 
 
         &-card {
-            height: 150px;
-            width: 120px;
+            height: 110px;
+            width: 80px;
             display: flex;
+            justify-content: space-around;
             position: relative;
+            margin: 0.5em;
+
+            @include desktop {
+                height: 150px;
+                width: 120px;
+            }
     
             &:before {
                 content: "";
@@ -47,19 +66,21 @@
                     width: 100%;
                 }
                 &-title {
-       
                     position: absolute;
                     z-index: 3;
                     font-size: 1rem;
                     font-family: "Helvetica Neue";
                     color: #ffffff;
                     font-weight: bold;
-                    width: 100px;
-                    bottom: 0;
+                    bottom: 12px;
+                    text-align: center;
+                    width: 100%;
+
+                    @include desktop {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
     }
-
-
 }

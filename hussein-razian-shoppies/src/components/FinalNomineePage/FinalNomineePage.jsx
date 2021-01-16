@@ -1,10 +1,12 @@
 import React from 'react';
 import NomineeCards from '../NomineeCards/NomineeCards';
+import Tobias from '../../assets/images/tobias.png';
 import "./finalNomineePage.scss";
 
 function FinalNomineePage({nominees}) {
     return (
         <main className="final-results">
+            <img className="final-results__image" src={Tobias} alt="Tobais Presenting Awards"/>
             <div className="final-results__display">
             {nominees && nominees.map((nominee, index) => {
                         return (
