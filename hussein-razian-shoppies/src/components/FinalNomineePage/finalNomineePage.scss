@@ -27,16 +27,12 @@
 
     &__display {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
         border-radius: 16px;
         position: absolute;
 
-        @include tablet {
-            flex-direction: row;
-        }
         
-
-
         &-card {
             height: 110px;
             width: 80px;
@@ -45,9 +41,9 @@
             position: relative;
             margin: 0.5em;
 
-            @include desktop {
-                height: 150px;
-                width: 120px;
+            @include tablet {
+                height: 175px;
+                width: 125px;
             }
     
             &:before {
@@ -72,12 +68,12 @@
                     font-family: "Helvetica Neue";
                     color: #ffffff;
                     font-weight: bold;
-                    bottom: 12px;
+                    bottom: 32px;
                     text-align: center;
                     width: 100%;
 
-                    @include desktop {
-                        font-size: 1.5rem;
+                    @include tablet {
+                        font-size: 1rem;
                     }
                 }
             }

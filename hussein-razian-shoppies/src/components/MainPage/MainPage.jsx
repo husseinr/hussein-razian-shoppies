@@ -14,6 +14,7 @@ let MainPage = () => {
     const [movieSearch, setMovieSearch] = useState('');
     const [nominees, setNominees] = useState([]);
     const [nomConfirmation, setNomConfirmation] = useState(true);
+    
   
     let API_URL = `http://www.omdbapi.com/?s=${movieSearch && movieSearch}&type="movie"&apikey=26250842`;
 
@@ -81,7 +82,7 @@ return (
             <div className="main-page__content">
                 <h2 className="main-page__content-heading">Search for a Movie Below and Select your Nominees!</h2>
                 {/* {nomConfirm} */}
-                <input className="main-page__content-search" placeholder="Search a Movie" name="movie" autocomplete="off" onChange={(e) => searchingMovie(e.target.value)}/>
+                <input className="main-page__content-search" placeholder="Search a Movie" name="movie" autoComplete="off" onChange={(e) => searchingMovie(e.target.value)}/>
                 <section className="main-page__content-items">
                     <div className="main-page__content-items-results">
                         <h2 className="main-page__content-items-results-header">Search Results</h2>
