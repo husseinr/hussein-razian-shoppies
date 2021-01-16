@@ -16,7 +16,7 @@ let MainPage = () => {
     const [nomConfirmation, setNomConfirmation] = useState(true);
     
   
-    let API_URL = `http://www.omdbapi.com/?s=${movieSearch && movieSearch}&type="movie"&apikey=26250842`;
+    let API_URL = `https://www.omdbapi.com/?s=${movieSearch && movieSearch}&type="movie"&apikey=26250842`;
 
     const getMovies = async () => {
         axios
