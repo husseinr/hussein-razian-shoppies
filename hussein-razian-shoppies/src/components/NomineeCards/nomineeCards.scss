@@ -1,3 +1,6 @@
+@import '../../styles/common-styles';
+
+
 .nom-card {
     height: 140px;
     width: 200px;
@@ -59,7 +62,7 @@
                 height: 30px;
                 font-size: .75rem;
                 color: #ffffff;
-                background-color: rgb(218, 62, 62);
+                background-color: $shoppies-red;
                 font-family: "Helvetica Neue";
                 border-radius: 5px;
                 border: none;

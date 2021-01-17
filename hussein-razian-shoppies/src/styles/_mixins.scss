@@ -29,3 +29,9 @@
     font-weight: 400;
     font-style: normal;
  }
+
+ @mixin gatsby-bold {
+    font-family: 'gatsby';
+    font-weight: 700;
+    font-style: normal;
+ }

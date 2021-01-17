@@ -1,30 +1,23 @@
+@import '../../styles/common-styles';
+
+
 .card {
 
-    height: 170px;
-    width: 250px;
+    height: 140px;
+    width: 200px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em;
     background-color: #232324;
-    border-radius: 8px;
 
-    // &:before {
-    //     content: "";
-    //     position: absolute;
-    //     inset: 0px;
-    //     background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
-    //     z-index: 1;
-    // }
 
     &__image {
         height: 100%;
-        width: 140px;
+        width: 100px;
         
         &-file {
             height: 100%;
             width: 100%;
-            border-radius: 8px 0 0 8px;
-            object-fit: cover;
         }
     }
 
@@ -34,7 +27,6 @@
         flex-direction: column;
         align-items: center;
         height: 100%;
-        margin-right: 10px;
 
         &-title {
             font-size: 1rem;
@@ -46,10 +38,9 @@
         }
     
         &-year {
-            font-size: 1rem;
+            font-size: 0.75rem;
             font-family: "Helvetica Neue";
-            color: #ffffff;
-            font-weight: bold;
+            color: $shoppies-gold;
             width: 100px;
         }
     
@@ -59,7 +50,7 @@
             height: 30px;
             font-size: .75rem;
             color: #ffffff;
-            background-color: #018060;
+            background-color: $shoppies-green;
             font-family: "Helvetica Neue";
             border-radius: 5px;
             border: none;

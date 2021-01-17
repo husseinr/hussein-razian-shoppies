@@ -1,32 +1,70 @@
 @import '../../styles/common-styles';
 
+@keyframes glowing {
+    0% {
+      background-color: #273f28;
+      box-shadow: 0 0 3px #a89005;
+    }
+    50% {
+      background-color: #4d8150;
+      box-shadow: 0 0 10px #e8a019;
+    }
+    100% {
+      background-color: #273f28;
+      box-shadow: 0 0 3px #a89005;
+    }
+  }
+
 .home-page {
     background-image: url('../../assets/images/main-page-background.jpg');
-    // background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(184, 102, 102)), url('../../assets/images/main-page-background.jpg');
-    background-color: black;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     min-height: 100vh;
     min-width: 100vw;
     position: relative;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
 
-    &__items {
-        width: 50%;
-        position: absolute;
-        bottom: 30vh;
-        left: 24%;
+    &__info {
+        padding: 24px 16px;
+        width: 75%;
+        height: 45vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0 auto;
+
+        &-title {
+            @include gatsby-bold;
+            color: white;
+            font-size: 2rem;
+
+        }
+
+        &-desc {
+            font-family: "Helvetica Neue";
+            color: white;
+
+        }
 
         &-button {
-            background-color: rgb(201, 39, 39);
-            color: black;
+            color: white;
             height: 70px;
             border-radius: 8px;
             border: none;
+            animation: glowing 2000ms infinite;
+            font-size: 1rem;
+            font-family: "Helvetica Neue";
+        }
+    }
 
+    &__image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 45vh;
+
+        @include tablet {
+            height: 65vh;
         }
     }
 }

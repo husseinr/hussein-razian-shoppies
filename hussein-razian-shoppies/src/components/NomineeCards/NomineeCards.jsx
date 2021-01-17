@@ -2,7 +2,8 @@ import React from 'react';
 import './nomineeCards.scss';
 
 
-function NomineeCards({key, src, year, title, remove, nominee, index}) {
+function NomineeCards({key, src, title, remove, nominee, index}) {
+    
     return (
         <div className="nom-card" key={key}>
             <div className="nom-card__value">
