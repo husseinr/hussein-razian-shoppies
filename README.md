@@ -2,7 +2,7 @@
 
 The challenge was to create an application that allows users to search for a movie of their choice while choosing 5 nominations to submit.
 
-You can view the deployed challeng [here](https://www.husseinrazian.com)
+[Click here to view the deployed challenge](https://www.husseinrazian.com)
 
 # In the root directory of this repository, you can simply run npm install followed by npm start to run the application in your browser.
 
