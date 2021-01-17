@@ -4,7 +4,17 @@ The challenge was to create an application that allows users to search for a mov
 
 [Click here to view the deployed challenge](https://www.husseinrazian.com)
 
-# In the root directory of this repository, you can simply run npm install followed by npm start to run the application in your browser.
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
 Resources used for the project:
 
