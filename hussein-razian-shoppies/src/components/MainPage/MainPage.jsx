@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Loader from 'react-loader-spinner';
 import PageHeader from '../PageHeader/PageHeader';
 import MovieCards from '../MovieCards/MovieCards';
 import NomineeCards from '../NomineeCards/NomineeCards';
@@ -74,13 +75,13 @@ if (nominees.length === 5) {
     </div>
 };
 
-
 return (
     nomConfirmation  ? 
     <>
         <PageHeader 
         nomConfirm={nomConfirm}
-        searchingMovie={searchingMovie}/>
+        searchingMovie={searchingMovie}
+        nomineeCount={nominees.length}/>
         <main className="main-page">
             <div className="main-page__content">
                 <section className="main-page__content-items">

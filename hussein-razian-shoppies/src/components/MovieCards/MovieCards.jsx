@@ -1,4 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import DefaultPoster from '../../assets/images/movie-poster.jpg';
+
 import './movieCards.scss';
 
 function MovieCards({title, poster, year, nominateMovies, nominees, id}) {
@@ -22,11 +24,19 @@ function MovieCards({title, poster, year, nominateMovies, nominees, id}) {
     else {
         nominateButton = <button className="card__items-button" onClick={(e) => nominateMovie(e)}>Nominate</button>
     }
+    
+    let moviePoster;
+    if(poster === "N/A") {
+        moviePoster = DefaultPoster
+    }
+    else {
+        moviePoster = poster
+    }
 
     return (
         <div className="card">
             <div className="card__image">
-                <img className="card__image-file" src={poster} alt={`${title} movie-poster`}/>
+                <img className="card__image-file" src={moviePoster} alt={`${title} movie-poster`}/>
             </div>
             <div className="card__items">
                 <h2 className="card__items-title">{title}</h2>
