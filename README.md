@@ -8,8 +8,8 @@ You can view the deployed challeng [here](https://www.husseinrazian.com)
 
 Resources used for the project:
 
-npm
-create-react-app
+npm <br>
+create-react-app <br>
 Netlify for deployment
 OMDB API for the movie results
 
