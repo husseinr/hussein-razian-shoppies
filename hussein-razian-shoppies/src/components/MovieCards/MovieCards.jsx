@@ -19,7 +19,7 @@ function MovieCards({title, poster, year, nominateMovies, nominees, id}) {
 
     let nominateButton;
     if(nomineeList.includes(id)) {
-        nominateButton = <button className="card__items-button--disabled" disabled onClick={(e) => nominateMovie(e)}>Nominate</button>
+        nominateButton = <button className="card__items-button card__items-button--disabled" disabled onClick={(e) => nominateMovie(e)}>Nominate</button>
     }
     else {
         nominateButton = <button className="card__items-button" onClick={(e) => nominateMovie(e)}>Nominate</button>

@@ -2,28 +2,42 @@
 
 .final-results {
     background-color: black;
-    background-image: url('../../assets/images/stage-background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     min-height: 100vh;
     width: 100vw;
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 
-    // &__confetti {
-    //     width: 100%;
-    //     height: 100vh;
-    // }
+    &__header {
+        color: $shoppies-gold;
+        font-size: 1.5rem;
+        @include atlas;
+        position: absolute;
+        top: 0;
+        padding: 24px 0;
+
+        @include desktop {
+            font-size: 3rem;
+        }
+    }
+
+    &__message {
+        color: #ffffff;
+        margin-bottom: 0.5em;
+
+        @include desktop {
+            font-size: 1.5rem;
+        }
+    }
 
     &__display {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         border-radius: 16px;
-        position: absolute;
 
         
         &-card {
@@ -58,7 +72,6 @@
                     position: absolute;
                     z-index: 3;
                     font-size: 0.75rem;
-                    font-family: "Helvetica Neue";
                     color: #ffffff;
                     font-weight: bold;
                     bottom: 16px;
@@ -70,6 +83,15 @@
                     }
                 }
             }
+        }
+    }
+    &__share {
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+
+        @include tablet {
+            width: 25%;
         }
     }
 }

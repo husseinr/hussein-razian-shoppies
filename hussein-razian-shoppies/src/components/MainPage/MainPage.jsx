@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import Loader from 'react-loader-spinner';
 import PageHeader from '../PageHeader/PageHeader';
 import MovieCards from '../MovieCards/MovieCards';
 import NomineeCards from '../NomineeCards/NomineeCards';
@@ -86,8 +85,8 @@ return (
             <div className="main-page__content">
                 <section className="main-page__content-items">
                     <div className="main-page__content-items-results">
-                        <h2 className="main-page__content-items-results-header">Search Results</h2>
-                        <div className="main-page__content-items-results-cards">
+                        <h2 className="main-page__content-items-header main-page__content-items-results-header">Search Results</h2>
+                        <div className="main-page__content-items-cards main-page__content-items-results-cards">
                             {movies && movies.map((movie) => {
                             return <MovieCards
                                     key={movie.imdbID}
@@ -103,9 +102,8 @@ return (
                         </div>
                     </div>
                     <div className="main-page__content-items-nominees">
-                        <h2 className="main-page__content-items-nominees-header"> Your Nominees</h2>
-
-                        <div className="main-page__content-items-nominees-cards">
+                        <h2 className="main-page__content-items-header main-page__content-items-nominees-header"> Your Nominees</h2>
+                        <div className="main-page__content-items-cards main-page__content-items-nominees-cards">
                             {nominees && nominees.map((nominee, index) => {
                             return  <NomineeCards
                                     key={nominee.id}
@@ -115,7 +113,6 @@ return (
                                     remove={removeNominee}
                                     nominee={nominee}
                                     index={index + 1}/>
-                            
                                     }
                                 )
                             }
@@ -125,8 +122,8 @@ return (
             </div>
         </main>
         </>
-: 
-<FinalPage/>
+    : 
+    <FinalPage/>
 )
 }
 

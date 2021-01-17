@@ -1,39 +1,54 @@
+@import '../../styles/common-styles';
+
 .nav {
-    height: 120px;
-    padding: 1.5em 0;
+    height: 150px;
+    padding: 24px 0;
     background-color: black;
     position: fixed;
     width: 100vw;
     z-index: 4;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
+    @include desktop {
+        height: 180px;
+    }
+
     &__header {
-        color: #d6c771;
+        color: $shoppies-gold;
         font-size: 1.5rem;
-    }
+        @include atlas;
 
-    &__search {
-        font-family: "Helvetica Neue";
-        width: 168px;
-        height: 32px;
-        padding: 8px 38px;
-        background-color: #E9E9E9;
-        border: none;
-        border-radius: 8px;
-        background-image: url("../../assets/images/search-icon.svg");
-        background-repeat: no-repeat;
-        background-position: 16px;
-    }
-
-    &__nominee-count {
-        &-value {
-            font-family: "Helvetica Neue";
-            color: white;
+        @include desktop {
+            font-size: 3rem;
         }
     }
 
+    &__items {
 
+        @include tablet {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 50%;
+        }
+
+        &-search {
+            width: 168px;
+            height: 16px;
+            padding: 8px 38px;
+            background-color: #E9E9E9;
+            border: none;
+            border-radius: 8px;
+            background-image: url("../../assets/images/search-icon.svg");
+            background-repeat: no-repeat;
+            background-position: 16px;
+        }
+    
+        &-count {
+            color: #ffffff;
+        }
+    }
 }
