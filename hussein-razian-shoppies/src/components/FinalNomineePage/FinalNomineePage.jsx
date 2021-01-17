@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import useWindowSize from '../../Hooks/Hooks';
 import Confetti from 'react-confetti';
 import {LinkedinShareButton, TwitterShareButton, FacebookShareButton, FacebookIcon, LinkedinIcon, TwitterIcon} from "react-share";
@@ -16,7 +17,9 @@ function FinalNomineePage({nominees}) {
             width={width}
             height={height}
             colors={['#d6c770', '#d91832', '#294329']}/>
-            <h1 className="final-results__header">The Shoppies</h1>
+            <Link className="final-results__link" to ="/">
+                <h1 className="final-results__link-header">The Shoppies</h1>
+            </Link>
             <p className="final-results__message">Thank you - Your Nominations are Submitted!</p>
             <div className="final-results__display">
                 {nominees && nominees.map((nominee) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Toby from '../../assets/images/toby-presenting.png';
+import Tobi from '../../assets/images/tobi-presenting.png';
 import './homePage.scss';
 
 function HomePage() {
@@ -10,7 +10,7 @@ function HomePage() {
                 <h1 className="home-page__info-title">THE SHOPPIES</h1>
                 <Link to="/main-page"><button className="home-page__info-button">Click Here to Nominate 5 Movies</button></Link>
             </div>
-            <img className="home-page__image" src={Toby}/>
+            <img className="home-page__image" src={Tobi} alt="Shopify CEO Presenting Page Intro"/>
         </main>
     )
 }

@@ -16,15 +16,20 @@
         height: 180px;
     }
 
-    &__header {
-        color: $shoppies-gold;
-        font-size: 1.5rem;
-        @include atlas;
-
-        @include desktop {
-            font-size: 3rem;
+    &__link {
+        text-decoration: none;
+        &-header {
+            color: $shoppies-gold;
+            font-size: 1.5rem;
+            @include atlas;
+    
+            @include desktop {
+                font-size: 3rem;
+            }
         }
     }
+
+
 
     &__items {
 

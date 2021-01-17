@@ -11,16 +11,22 @@
     justify-content: center;
     position: relative;
 
-    &__header {
-        color: $shoppies-gold;
-        font-size: 1.5rem;
-        @include atlas;
+    &__link {
+        text-decoration: none;
         position: absolute;
         top: 0;
         padding: 24px 0;
 
-        @include desktop {
-            font-size: 3rem;
+
+
+        &-header {
+            @include atlas;
+            color: $shoppies-gold;
+            font-size: 1.5rem;
+
+            @include desktop {
+                font-size: 3rem;
+            }
         }
     }
 
@@ -91,7 +97,7 @@
         justify-content: space-around;
 
         @include tablet {
-            width: 25%;
+            width: 15%;
         }
     }
 }
