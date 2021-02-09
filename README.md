@@ -1,7 +1,6 @@
-# The Shopify 2021 Summer Intern Challenge - The Shoppies!
+# The Shoppies! An app that allows you to search movies while nominating a total of 5 movies.
 
-The challenge was to create an application that allows users to search for a movie of their choice while choosing 5 nominations to submit.
-
+[Click here to view the project](https://romantic-leakey-5c9746.netlify.app)
 
 ## Available Scripts
 
