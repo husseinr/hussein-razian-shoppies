@@ -19,7 +19,6 @@ Resources used for the project:
 
 npm <br>
 create-react-app <br>
-Netlify for deployment <br>
 OMDB API for the movie results
 
 Enjoy!
